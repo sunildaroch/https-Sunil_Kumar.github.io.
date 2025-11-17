@@ -20,7 +20,6 @@ title: Publications
 
 ## Conference Presentations
 
-- Lunar regolith excavation under microgravity using DEM simulations, International Conference on Particle Technology (2024)
 - Shape effects on particle segregation dynamics, European Conference on Mixing (2023)
 - Non-spherical particle behavior in rotating systems, AIChE Annual Meeting (2022)
 
