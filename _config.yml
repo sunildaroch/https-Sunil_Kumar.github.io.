@@ -1,0 +1,8 @@
+title: "Dr. Sunil Kumar"
+description: "DEM, granular flows, mixing, segregation, and computational modeling"
+remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-include-cache
+markdown: kramdown
+kramdown:
+  input: GFM
