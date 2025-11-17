@@ -1,360 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dr. Sunil Kumar | Postdoctoral Fellow, DEM Research</title>
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Dr. Sunil Kumar - Computational Scientist specializing in Discrete Element Method (DEM) simulations of granular materials and lunar soil mechanics.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background: #f5f7fa; }
+        nav { position: fixed; left: 0; top: 0; width: 280px; height: 100vh; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 40px 0; z-index: 1000; overflow-y: auto; box-shadow: 2px 0 10px rgba(0,0,0,0.1); }
+        nav .logo { text-align: center; padding: 0 20px 30px; border-bottom: 2px solid rgba(255,255,255,0.1); margin-bottom: 30px; }
+        nav .logo i { font-size: 40px; color: #00bcd4; display: block; margin-bottom: 10px; }
+        nav .logo h3 { color: white; font-size: 18px; font-weight: 600; }
+        nav ul { list-style: none; }
+        nav ul li a { display: block; padding: 15px 30px; color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s; border-left: 4px solid transparent; }
+        nav ul li a:hover { background: rgba(255,255,255,0.1); color: #00bcd4; border-left-color: #00bcd4; padding-left: 35px; }
+        main { margin-left: 280px; }
+        section { padding: 80px 60px; }
+        section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 20px; color: #1e3c72; position: relative; padding-bottom: 15px; }
+        section h2:after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background: linear-gradient(90deg, #00bcd4, #2196f3); border-radius: 2px; }
+        section h3 { font-size: 24px; color: #1e3c72; margin-top: 25px; margin-bottom: 12px; font-weight: 600; }
+        section p, section li { font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 15px; }
+        section ul { margin-left: 25px; }
+        section li { margin-bottom: 10px; }
+        #intro { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 120px 60px; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; margin-left: 0; }
+        #intro h1 { font-family: 'Playfair Display', serif; font-size: 64px; margin-bottom: 20px; animation: slideInDown 0.8s ease; }
+        #intro h1 span { color: #00bcd4; }
+        #intro h2 { font-size: 32px; margin-bottom: 30px; color: rgba(255,255,255,0.9); animation: slideInUp 0.8s ease; border: none; }
+        #intro h2:after { display: none; }
+        .intro-text { font-size: 18px; max-width: 700px; margin: 0 auto 40px; line-height: 1.9; color: rgba(255,255,255,0.95); }
+        .btn { display: inline-block; padding: 14px 35px; margin: 10px; background: linear-gradient(135deg, #00bcd4, #2196f3); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; cursor: pointer; font-size: 16px; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,188,212,0.3); background: linear-gradient(135deg, #2196f3, #00bcd4); }
+        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
+        .btn-secondary:hover { background: white; color: #1e3c72; }
+        #about, #publications, #research, #professional, #teaching, #skills, #education { background: white; }
+        .publication-item { background: #f8f9fa; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00bcd4; border-radius: 5px; transition: all 0.3s ease; }
+        .publication-item:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.1); transform: translateX(5px); }
+        .publication-item strong { color: #1e3c72; display: block; margin-bottom: 12px; font-size: 16px; }
+        .publication-item a { color: #00bcd4; text-decoration: none; font-weight: 600; }
+        .publication-item a:hover { text-decoration: underline; }
+        .research-item, .professional-item { background: white; padding: 30px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 4px solid #00bcd4; transition: all 0.3s ease; }
+        .research-item:hover, .professional-item:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .research-item h3, .professional-item h3 { color: #1e3c72; margin-bottom: 10px; }
+        .research-item p:first-of-type, .professional-item p:first-of-type { color: #00bcd4; font-weight: 600; font-size: 14px; margin-bottom: 15px; }
+        .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .skill-block { background: linear-gradient(135deg, #00bcd4, #2196f3); padding: 25px; border-radius: 8px; text-align: center; color: white; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,188,212,0.2); }
+        .skill-block:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,188,212,0.4); }
+        .skill-block p { margin: 0; color: white; }
+        #contact { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; text-align: center; }
+        #contact h2 { color: white; margin-bottom: 40px; }
+        #contact h2:after { background: linear-gradient(90deg, #00bcd4, rgba(0,188,212,0.3)); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .contact-item { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+        .contact-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+        .contact-item i { font-size: 32px; color: #00bcd4; margin-bottom: 15px; display: block; }
+        .contact-item p { margin: 0; font-size: 16px; color: rgba(255,255,255,0.9); }
+        .contact-item a { color: #00bcd4; text-decoration: none; font-weight: 600; }
+        .contact-item a:hover { text-decoration: underline; }
+        @keyframes slideInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #00bcd4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0097a7; }
+        @media (max-width: 768px) { nav { width: 100%; height: auto; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; } nav .logo { padding: 0; border: none; margin: 0; min-width: 200px; } nav ul { display: flex; overflow-x: auto; flex: 1; } nav ul li a { padding: 10px 15px; font-size: 14px; white-space: nowrap; } main { margin-left: 0; } section { padding: 50px 25px; } section h2 { font-size: 32px; } #intro { padding: 80px 25px; min-height: auto; } #intro h1 { font-size: 42px; } #intro h2 { font-size: 24px; } .skills-container { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; } .skill-block { padding: 15px; font-size: 14px; } }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="hide-on-small-only fixed section table-of-contents">
-        <ul class="side-nav fixed section table-of-contents">
-            <li class="logo">
-                <a id="logo-container" href="#intro" class="brand-logo grey-blue-text">
-                    <i class="fa fa-terminal"></i>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li><a href="#intro" class="grey-blue-text">Home</a></li>
-            <li><a href="#about" class="grey-blue-text">About</a></li>
-            <li><a href="#publications" class="grey-blue-text">Publications</a></li>
-            <li><a href="#research" class="grey-blue-text">Research</a></li>
-            <li><a href="#professional" class="grey-blue-text">Professional</a></li>
-            <li><a href="#teaching" class="grey-blue-text">Teaching</a></li>
-            <li><a href="#skills" class="grey-blue-text">Skills</a></li>
-            <li><a href="#education" class="grey-blue-text">Education</a></li>
-            <li><a href="#contact" class="grey-blue-text">Contact</a></li>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-terminal"></i>
+            <h3>Dr. Sunil Kumar</h3>
+        </div>
+        <ul>
+            <li><a href="#intro">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#professional">Professional</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="intro" class="intro scrollspy deep-teal">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h1 class="white-text">Hi, I'm <span id="name" class="teal">Dr. Sunil Kumar</span>.</h1>
-                    <h2 class="white-text">A <span id="rotating" class="teal">Computational Scientist</span></h2>
-                    <p class="white-text intro-text">
-                        Postdoctoral Researcher specializing in Discrete Element Method (DEM) simulations of granular materials, lunar soil excavation mechanics, and computational particle technology.
-                    </p>
-                    <a href="#about" class="btn teal lighten-1">Read More</a>
-                    <a href="#contact" class="btn teal lighten-2">Contact Me</a>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="intro">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Dr. Sunil Kumar</span></h1>
+                <h2 id="rotating-role">Computational Scientist</h2>
+                <p class="intro-text">Postdoctoral Researcher specializing in Discrete Element Method (DEM) simulations of granular materials, lunar soil excavation mechanics, and computational particle technology.</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn">Read More</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="scrollspy about">
-        <div class="container">
-            <h2 class="teal-text">About</h2>
-            <div class="divider"></div>
-            <h3 class="white-text">Career Summary</h3>
-            <p class="white-text">
-                Postdoctoral Fellow and Computational Scientist, currently at AGH University of Science and Technology, Krakow, Poland. My work integrates advanced Discrete Element Method (DEM) simulations with experimental techniques to understand granular materials—especially lunar regolith and planetary excavation. Recognized for research presentations in Germany (DEM9, PARTEC), independent research grants, and several best presentation and poster awards. Nominated for Lovraj Kumar Memorial Trust Best PhD Thesis and George Klinzing Best PhD in Particle Technology.
-            </p>
-            <h3 class="white-text">Expertise</h3>
-            <p class="white-text">
-                DEM Modeling (LIGGGHTS, EDEM, Rocky), multi-equipment experiments (drums/beds), parameter calibration, ML-integrated modeling, remote sensing, Python, and grant writing.
-            </p>
-            <h3 class="white-text">Achievements</h3>
-            <ul class="white-text">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <h3>Career Summary</h3>
+            <p>Postdoctoral Fellow and Computational Scientist at AGH University of Science and Technology, Krakow, Poland. My work integrates advanced Discrete Element Method (DEM) simulations with experimental techniques to understand granular materials—especially lunar regolith and planetary excavation. Recognized for research presentations in Germany (DEM9, PARTEC), independent research grants, and several best presentation and poster awards. Nominated for Lovraj Kumar Memorial Trust Best PhD Thesis and George Klinzing Best PhD in Particle Technology.</p>
+            <h3>Expertise</h3>
+            <p>DEM Modeling (LIGGGHTS, EDEM, Rocky), multi-equipment experiments (drums/beds), parameter calibration, ML-integrated modeling, remote sensing, Python, and grant writing.</p>
+            <h3>Achievements</h3>
+            <ul>
                 <li>Over 11 Q1 journal papers, 2 under review</li>
                 <li>Travel funding by SERB, CSIR, DAAD, and FAU</li>
                 <li>Mentored students to national innovation awards</li>
                 <li>Volunteer/session coordinator at ICECESS 2024, ChemTSF 2022</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="scrollspy publications">
-      <div class="container">
-        <h2 class="teal-text">Journal Publications</h2>
-        <div class="divider"></div>
-        <!-- 2025 -->
-        <h3 class="white-text">2025</h3>
-        <div class="publications-serial">
-          <div class="publication-item white-text">
-            <strong>1. Impact of Particle Shape on Mixing Dynamics in a Vibrated Packed Bed: An Analysis Using Orientational Entropy</strong>
-            <div>
-              S. Khatoon, S. Kumar, P. Dubey, R. Yadav, A. Anand, C.-Y. Wu, Powder Technology, IF 5.2. 
-              <span>DOI: <a href="https://doi.org/10.1016/j.powtec.2025.121431" class="teal-text" target="_blank">10.1016/j.powtec.2025.121431</a></span>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>2. Comparative experimental study of effect of vertically up-transporting bends on non-spherical particle mixing in a pneumatic conveying system</strong>
-            <div>
-              S. Khatoon, S. Verma, S. Kumar, P. Dubey, R. Yadav, A. Anand, Advance Powder Technology, IF 4.2. (Submitted May 2025)
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>3. Measuring the Critical Length Scale of Percolation of Fine Particles Under Vibration: A Discrete Element Method Study</strong>
-            <div>
-              P. Dubey, J. Yogi, S. Kumar, S. Khatoon, K. Kumari, A Anand, Physics of Fluids, IF 4.2.
-              DOI: <a href="https://doi.org/10.1063/5.0281324" class="teal-text" target="_blank">10.1063/5.0281324</a>
-            </div>
-          </div>
-        </div>
-        <!-- 2024 -->
-        <h3 class="white-text">2024</h3>
-        <div class="publications-serial">
-          <div class="publication-item white-text">
-            <strong>1. Predicting Mixing in Rotating Drums: An Integrative ML and DEM Approach</strong>
-            <div>
-              S. Kumar, Y. Garg, S. Khatoon, P. Dubey, K. Kumari, A. Anand, Industrial Engineering Chemistry Research, IF 4.2.<br>
-              DOI: <a href="https://doi.org/10.1021/acs.iecr.4c02147" class="teal-text" target="_blank">10.1021/acs.iecr.4c02147</a>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>2. Shape-dependent Size Polydispersity: DEM Investigation of Mixing Behavior in a Vibrating Packed Bed System</strong>
-            <div>
-              P. Dubey, J. Yogi, S. Kumar, S. Khatoon, K. Kumari, A Anand, Powder Technology, IF 5.2.<br>
-              DOI: <a href="https://doi.org/10.1016/j.powtec.2024.119804" class="teal-text" target="_blank">10.1016/j.powtec.2024.119804</a>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>3. Influence of aspect ratio of ellipsoidal particles on mixing in vibrated packed bed using DEM</strong>
-            <div>
-              S. Khatoon, S. Kumar, J. Yogi, P. Dubey, A. Anand, AIChE Journal, IF 3.2.<br>
-              DOI: <a href="https://doi.org/10.1002/aic.18405" class="teal-text" target="_blank">10.1002/aic.18405</a>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>4. A Parametric Investigation of Granular Discharge Using Discrete Element Modeling</strong>
-            <div>
-              S. Kumar, Adam Kolusz, Alberto Gallina, Industrial Engineering Chemistry Research, IF 4.2. (Under preparation)
-            </div>
-          </div>
-        </div>
-        <!-- 2023 -->
-        <h3 class="white-text">2023</h3>
-        <div class="publications-serial">
-          <div class="publication-item white-text">
-            <strong>1. Shape-dependent particle segregation in rotating drum: Insights from DEM Simulations</strong>
-            <div>
-              S. Kumar, S. Khatoon, J. Yogi, P. Dubey, A. Anand, Powder Technology, IF 5.2, 119134.<br>
-              DOI: <a href="https://doi.org/10.1016/j.powtec.2023.119134" class="teal-text" target="_blank">10.1016/j.powtec.2023.119134</a>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>2. Effect of aspect ratio of ellipsoidal particles on segregation of a binary mixture in a rotating drum</strong>
-            <div>
-              S. Kumar, S. Khatoon, J. Yogi, P. Dubey, A. Anand, Powder Technology, IF 5.2, 118682.<br>
-              DOI: <a href="https://doi.org/10.1016/j.powtec.2023.118682" class="teal-text" target="_blank">10.1016/j.powtec.2023.118682</a>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>3. Effect of non-sphericity of a narrow-sized binary mixture on mixing in convective vibrated packed bed using Discrete Element Method</strong>
-            <div>
-              J. Yogi, P. Dubey, S. Khatoon, K. Iyer, S. Kumar, A. Anand, Powder Technology, IF 5.2, 118600.<br>
-              DOI: <a href="https://doi.org/10.1016/j.powtec.2023.118600" class="teal-text" target="_blank">10.1016/j.powtec.2023.118600</a>
-            </div>
-          </div>
-        </div>
-        <!-- 2022 -->
-        <h3 class="white-text">2022</h3>
-        <div class="publications-serial">
-          <div class="publication-item white-text">
-            <strong>1. Experimental investigation of segregation in a rotating cylinder with non-spherical particles</strong>
-            <div>
-              S. Kumar, S. Khatoon, J. Yogi, S. K. Verma, A. Anand, Powder Technology, IF 5.2, 441, 117918.<br>
-              DOI: <a href="https://doi.org/10.1016/j.powtec.2022.117918" class="teal-text" target="_blank">10.1016/j.powtec.2022.117918</a>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>2. Cumulative effect of particle properties on mixing of multi-component mixture in a vibrated packed bed</strong>
-            <div>
-              J. Yogi, P. Dubey, S.K. Verma, S. Kumar, A. Anand, Powder Technology, IF 5.2, 118000.<br>
-              DOI: <a href="https://doi.org/10.1016/j.powtec.2022.118000" class="teal-text" target="_blank">10.1016/j.powtec.2022.118000</a>
-            </div>
-          </div>
-          <div class="publication-item white-text">
-            <strong>3. Experimental Investigation of Segregation in the Dilute Phase Transport of Nonspherical Particles through a Pneumatic Conveying System</strong>
-            <div>
-              S. Verma, J. Yogi, S. Kumar, A. Anand, Industrial Engineering Chemistry Research, IF 4.2, 61, 12776–12786.<br>
-              DOI: <a href="https://doi.org/10.1021/acs.iecr.2c01191" class="teal-text" target="_blank">10.1021/acs.iecr.2c01191</a>
-            </div>
-          </div>
-        </div>
-        <!-- 2021 -->
-        <h3 class="white-text">2021</h3>
-        <div class="publications-serial">
-          <div class="publication-item white-text">
-            <strong>1. Experimental study of mixing of nonspherical particles in a vibrated packed bed mixer</strong>
-            <div>
-              J. Yogi, S. Verma, S. Kumar, A. Anand, Industrial & Engineering Chemistry Research, IF 4.2, 60(48), 17694–17704.<br>
-              DOI: <a href="https://doi.org/10.1021/acs.iecr.1c03048" class="teal-text" target="_blank">10.1021/acs.iecr.1c03048</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Journal Publications</h2>
+            <h3>2025</h3>
+            <div class="publication-item"><strong>1. Impact of Particle Shape on Mixing Dynamics in a Vibrated Packed Bed</strong><br>S. Khatoon, S. Kumar, P. Dubey, R. Yadav, A. Anand, C.-Y. Wu, Powder Technology, IF 5.2. DOI: <a href="https://doi.org/10.1016/j.powtec.2025.121431" target="_blank">10.1016/j.powtec.2025.121431</a></div>
+            <h3>2024</h3>
+            <div class="publication-item"><strong>1. Predicting Mixing in Rotating Drums: An Integrative ML and DEM Approach</strong><br>S. Kumar, Y. Garg, S. Khatoon, P. Dubey, K. Kumari, A. Anand, Industrial Engineering Chemistry Research, IF 4.2. DOI: <a href="https://doi.org/10.1021/acs.iecr.4c02147" target="_blank">10.1021/acs.iecr.4c02147</a></div>
+            <div class="publication-item"><strong>2. Shape-dependent Size Polydispersity: DEM Investigation</strong><br>P. Dubey, J. Yogi, S. Kumar, S. Khatoon, K. Kumari, A. Anand, Powder Technology, IF 5.2. DOI: <a href="https://doi.org/10.1016/j.powtec.2024.119804" target="_blank">10.1016/j.powtec.2024.119804</a></div>
+            <h3>2023</h3>
+            <div class="publication-item"><strong>1. Shape-dependent particle segregation in rotating drum</strong><br>S. Kumar, S. Khatoon, J. Yogi, P. Dubey, A. Anand, Powder Technology, IF 5.2. DOI: <a href="https://doi.org/10.1016/j.powtec.2023.119134" target="_blank">10.1016/j.powtec.2023.119134</a></div>
+            <h3>2022</h3>
+            <div class="publication-item"><strong>1. Experimental investigation of segregation in a rotating cylinder</strong><br>S. Kumar, S. Khatoon, J. Yogi, S. K. Verma, A. Anand, Powder Technology, IF 5.2. DOI: <a href="https://doi.org/10.1016/j.powtec.2022.117918" target="_blank">10.1016/j.powtec.2022.117918</a></div>
+            <h3>2021</h3>
+            <div class="publication-item"><strong>1. Experimental study of mixing of nonspherical particles</strong><br>J. Yogi, S. Verma, S. Kumar, A. Anand, Industrial & Engineering Chemistry Research, IF 4.2. DOI: <a href="https://doi.org/10.1021/acs.iecr.1c03048" target="_blank">10.1021/acs.iecr.1c03048</a></div>
+        </section>
 
-    <!-- Research Positions Section -->
-    <section id="research" class="scrollspy research">
-        <div class="container">
-            <h2 class="teal-text">Research Experience</h2>
-            <div class="divider"></div>
+        <!-- Research Section -->
+        <section id="research">
+            <h2>Research Experience</h2>
             <div class="research-item">
-                <h3 class="white-text">Postdoctoral Fellow – AGH University (Poland)</h3>
-                <p class="white-text"><strong>Dec 2024 - Present | Krakow, Poland</strong></p>
-                <p class="white-text">Simulating lunar regolith excavation under microgravity with DEM, validating DEM using repose/shear tests. Parameter optimization for lunar missions.</p>
+                <h3>Postdoctoral Fellow – AGH University (Poland)</h3>
+                <p><strong>Dec 2024 - Present | Krakow, Poland</strong></p>
+                <p>Simulating lunar regolith excavation under microgravity with DEM, validating DEM using repose/shear tests. Parameter optimization for lunar missions.</p>
             </div>
             <div class="research-item">
-                <h3 class="white-text">Postdoctoral Fellow – IIT Bombay</h3>
-                <p class="white-text"><strong>Sept 2024 - Dec 2024 | Mumbai, India</strong></p>
-                <p class="white-text">Modeled breakage of non-spherical particles in vibro-fluidized beds (LIGGGHTS DEM); achieved first simulation benchmarks.</p>
+                <h3>Postdoctoral Fellow – IIT Bombay</h3>
+                <p><strong>Sept 2024 - Dec 2024 | Mumbai, India</strong></p>
+                <p>Modeled breakage of non-spherical particles in vibro-fluidized beds (LIGGGHTS DEM); achieved first simulation benchmarks.</p>
             </div>
             <div class="research-item">
-                <h3 class="white-text">PhD Research Scholar – IIT Roorkee</h3>
-                <p class="white-text"><strong>Dec 2018 - July 2024 | Roorkee, India</strong></p>
-                <p class="white-text">Established lab, conducted shape/segregation experiments, finalist for Lovraj Kumar Memorial and Klinzing thesis awards.</p>
+                <h3>PhD Research Scholar – IIT Roorkee</h3>
+                <p><strong>Dec 2018 - July 2024 | Roorkee, India</strong></p>
+                <p>Established lab, conducted shape/segregation experiments, finalist for Lovraj Kumar Memorial and Klinzing thesis awards.</p>
             </div>
-            <div class="research-item">
-                <h3 class="white-text">Polymer Composite Lab – Panjab University</h3>
-                <p class="white-text"><strong>July 2016 - July 2018 | Chandigarh, India</strong></p>
-                <p class="white-text">Bio-polymer nanocomposites synthesis; operated FTIR, XRD, SEM, FESEM, UTM; collaborated on wheat straw valorization.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Professional Experience Section -->
-    <section id="professional" class="scrollspy professional">
-        <div class="container">
-            <h2 class="teal-text">Professional Experience</h2>
-            <div class="divider"></div>
+        <!-- Professional Section -->
+        <section id="professional">
+            <h2>Professional Experience</h2>
             <div class="professional-item">
-                <h3 class="white-text">STEM AI Scientist – Turing Enterprises (Remote)</h3>
-                <p class="white-text"><strong>July 2024 - Aug 2025</strong></p>
-                <p class="white-text">Engineered deep scientific datasets and subject evaluation tools for OpenAI/Anthropic LLMs; steered scientific content pipeline.</p>
+                <h3>STEM AI Scientist – Turing Enterprises (Remote)</h3>
+                <p><strong>July 2024 - Aug 2025</strong></p>
+                <p>Engineered deep scientific datasets and subject evaluation tools for OpenAI/Anthropic LLMs; steered scientific content pipeline.</p>
             </div>
             <div class="professional-item">
-                <h3 class="white-text">Assistant Professor – DAV University</h3>
-                <p class="white-text"><strong>Aug 2018 - Dec 2018 | Jalandhar, Punjab</strong></p>
-                <p class="white-text">Taught core engineering modules; managed laboratory courses and festival organizing.</p>
+                <h3>Assistant Professor – DAV University</h3>
+                <p><strong>Aug 2018 - Dec 2018 | Jalandhar, Punjab</strong></p>
+                <p>Taught core engineering modules; managed laboratory courses and festival organizing.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Teaching Experience Section -->
-    <section id="teaching" class="scrollspy teaching">
-        <div class="container">
-            <h2 class="teal-text">Teaching & Mentoring</h2>
-            <div class="divider"></div>
-            <div class="teaching-item">
-                <h3 class="white-text">Courses & Mentoring</h3>
-                <p class="white-text"><strong>2018 - 2024</strong></p>
-                <ul class="white-text">
-                    <li>Courses taught: Process Design, Transport Phenomena, Mass/Heat Transfer, Reaction Engineering</li>
-                    <li>TA/Lab supervision: Granular Rheology, Fluid Dynamics</li>
-                    <li>Mentored winner: IIT Roorkee Best Innovator Award</li>
-                    <li>Session coordinator: ICECESS 2024, ChemTSF 2022</li>
-                </ul>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills & Tools</h2>
+            <h3>Simulation Platforms</h3>
+            <div class="skills-container">
+                <div class="skill-block"><p>LIGGGHTS</p></div>
+                <div class="skill-block"><p>Rocky DEM</p></div>
+                <div class="skill-block"><p>EDEM</p></div>
+                <div class="skill-block"><p>Yade</p></div>
             </div>
-        </div>
-    </section>
+            <h3>Programming & Data</h3>
+            <div class="skills-container">
+                <div class="skill-block"><p>Python (NumPy, Pandas, SciPy, Matplotlib)</p></div>
+                <div class="skill-block"><p>LaTeX</p></div>
+                <div class="skill-block"><p>Bash/Shell scripting</p></div>
+            </div>
+            <h3>Analysis & Visualization</h3>
+            <div class="skills-container">
+                <div class="skill-block"><p>ParaView</p></div>
+                <div class="skill-block"><p>Tableau</p></div>
+                <div class="skill-block"><p>MATLAB</p></div>
+                <div class="skill-block"><p>Origin Pro</p></div>
+            </div>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="scrollspy skills">
-        <div class="container">
-            <h2 class="teal-text">Skills & Tools</h2>
-            <div class="divider"></div>
-            <h3 class="white-text">Simulation Platforms</h3>
-            <div class="skills-container">
-                <div class="skill-block"><p class="white-text">LIGGGHTS</p></div>
-                <div class="skill-block"><p class="white-text">Rocky DEM</p></div>
-                <div class="skill-block"><p class="white-text">EDEM</p></div>
-                <div class="skill-block"><p class="white-text">Yade</p></div>
-            </div>
-            <h3 class="white-text">Programming & Data</h3>
-            <div class="skills-container">
-                <div class="skill-block"><p class="white-text">Python (NumPy, Pandas, SciPy, Matplotlib)</p></div>
-                <div class="skill-block"><p class="white-text">LaTeX</p></div>
-                <div class="skill-block"><p class="white-text">Bash/Shell scripting</p></div>
-            </div>
-            <h3 class="white-text">Analysis & Visualization</h3>
-            <div class="skills-container">
-                <div class="skill-block"><p class="white-text">ParaView</p></div>
-                <div class="skill-block"><p class="white-text">Tableau</p></div>
-                <div class="skill-block"><p class="white-text">MATLAB</p></div>
-                <div class="skill-block"><p class="white-text">Origin Pro</p></div>
-                <div class="skill-block"><p class="white-text">ImageJ</p></div>
-                <div class="skill-block"><p class="white-text">Excel</p></div>
-            </div>
-            <h3 class="white-text">Design Tools</h3>
-            <div class="skills-container">
-                <div class="skill-block"><p class="white-text">SolidWorks</p></div>
-                <div class="skill-block"><p class="white-text">FreeCAD</p></div>
-                <div class="skill-block"><p class="white-text">Adobe Premiere Pro</p></div>
-                <div class="skill-block"><p class="white-text">Vegas Pro</p></div>
-            </div>
-            <h3 class="white-text">Awards</h3>
-            <ul class="white-text">
-                <li>Best Oral Presentation, IIT Roorkee (2023)</li>
-                <li>Best Poster, UKUM 2023</li>
-                <li>Session Coordinator, Volunteer (ICECESS 2024 & ChemTSF 2022)</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="scrollspy education">
-        <div class="container">
-            <h2 class="teal-text">Education</h2>
-            <div class="divider"></div>
-            <div class="education-item">
-                <h3 class="white-text">Ph.D. in Chemical Engineering, IIT Roorkee</h3>
-                <p class="white-text"><strong>Dec 2018 - July 2024</strong></p>
-                <p class="white-text">CGPA: 8.4/10.0 | Supervisor: Prof. Anshu Anand</p>
-                <p class="white-text">Thesis: Particle Shape Effects on Mixing & Segregation: DEM Studies in Rotating Drums and Vibrating Beds</p>
-            </div>
-            <div class="education-item">
-                <h3 class="white-text">M.E. in Chemical Engineering, Panjab University</h3>
-                <p class="white-text"><strong>July 2016 - July 2018</strong></p>
-                <p class="white-text">Thesis: Polyurethane bio-nanocomposites from wheat straw</p>
-            </div>
-            <div class="education-item">
-                <h3 class="white-text">B.E. in Chemical Engineering, Panjab University</h3>
-                <p class="white-text"><strong>July 2011 - July 2015</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="scrollspy contact deep-teal">
-        <div class="container">
-            <h2 class="white-text">Contact</h2>
-            <div class="divider"></div>
-            <div class="row">
-                <div class="col s12 m6">
-                    <p class="white-text"><i class="fa fa-envelope"></i> <a href="mailto:skumar@agh.edu.pl" class="white-text">skumar@agh.edu.pl</a> (AGH Krakow)</p>
-                    <p class="white-text"><i class="fa fa-envelope"></i> <a href="mailto:skumar11@ch.iitr.ac.in" class="white-text">skumar11@ch.iitr.ac.in</a> (IIT Roorkee)</p>
-                    <p class="white-text"><i class="fa fa-phone"></i> <a href="tel:+919417727085" class="white-text">+91-9417727085</a></p>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">Let's connect and discuss research opportunities, collaborations, or exciting projects!</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: <a href="mailto:skumar@agh.edu.pl">skumar@agh.edu.pl</a> (AGH Krakow)</p>
+                    <p style="margin-top: 10px; font-size: 14px;"><a href="mailto:skumar11@ch.iitr.ac.in">skumar11@ch.iitr.ac.in</a> (IIT Roorkee)</p>
                 </div>
-                <div class="col s12 m6">
-                    <p class="white-text"><i class="fa fa-github"></i> <a href="https://github.com/sunildaroch" class="white-text">github.com/sunildaroch</a></p>
-                    <p class="white-text"><i class="fa fa-graduation-cap"></i> <a href="https://scholar.google.com" class="white-text">Google Scholar</a></p>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p><a href="tel:+919417727085">+91-9417727085</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-github"></i>
+                    <p><a href="https://github.com/sunildaroch" target="_blank">github.com/sunildaroch</a></p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
     <script>
-        // Rotating text animation
         const roles = ['Computational Scientist', 'Researcher', 'DEM Expert', 'Teacher'];
         let roleIndex = 0;
-
         function rotateRole() {
-            const element = document.getElementById('rotating');
+            const element = document.getElementById('rotating-role');
             element.style.opacity = '0';
             setTimeout(() => {
                 roleIndex = (roleIndex + 1) % roles.length;
@@ -362,13 +231,7 @@
                 element.style.opacity = '1';
             }, 300);
         }
-
         setInterval(rotateRole, 3000);
-
-        // Initialize Materialize components
-        $(document).ready(function(){
-            $('.scrollspy').scrollSpy();
-        });
     </script>
 </body>
 </html>
